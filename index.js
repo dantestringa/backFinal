@@ -1,8 +1,8 @@
 const express = require('express')
-require('dotenv').config
+require('dotenv').config()
 const cors = require('cors')
 const morgan = require('morgan')
-const PORT = 3001 || 9000
+const PORT = process.env.PORT || 9000;
 const path = require('path')
 const multer = require('multer')
 require('./database/conexion')
@@ -12,13 +12,13 @@ const personaController = require('./controllers/personaController')
 //Midlewars
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname + '/public')))
+app.use(express.static(path.join(__dirname, '/public')))
 app.use(cors())
-app.use(morgan('dev'))
+app.use(morgan('common'))
 
 // Configuramos Multer
 const storage = multer.diskStorage({
-    destination: function(req, file , callback) {
+    destination: function(req, file, callback) {
         console.log(file);
         callback(null, 'uploads')
     },
