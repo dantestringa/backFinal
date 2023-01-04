@@ -1,6 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-const URL = process.env.MONGOATLAS
+const URL = 'mongodb+srv://dantestringa:Stringa123@cluster0.8s5pdqm.mongodb.net/mean?retryWrites=true&w=majority'
 mongoose.set('strictQuery', false); //Afloja el chat de la consola
 
 const conexion = mongoose.connect(URL, {
