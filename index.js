@@ -33,7 +33,7 @@ const uploads = multer({storage: storage})
 
 app.get('/datos', async (req, res) => {
   res.json({
-    personas: await personaController.findAll()
+    datos: await personaController.findAll()
   })
 })
 
