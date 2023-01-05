@@ -39,7 +39,7 @@ app.get('/datos', async (req, res) => {
 })
 
 app.post('/crear', async (req, res) => {
-    const { nombre, apellido, dni } = req.body
+    const { nombre, apellido, dni, tipo, matricula } = req.body
     console.log(`${nombre} ${apellido} ${dni} ${tipo} ${matricula}`);
 
     await personaController.create(req.body)
