@@ -9,6 +9,7 @@ require('./database/conexion')
 const app = express()
 const personaController = require('./controllers/personaController')
 
+
 //Midlewars
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -39,7 +40,7 @@ app.get('/datos', async (req, res) => {
 
 app.post('/crear', async (req, res) => {
     const { nombre, apellido, dni } = req.body
-    console.log(`${nombre} ${apellido} ${dni}`);
+    console.log(`${nombre} ${apellido} ${dni} ${tipo} ${matricula}`);
 
     await personaController.create(req.body)
 

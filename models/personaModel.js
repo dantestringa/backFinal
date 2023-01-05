@@ -14,6 +14,14 @@ const personaSchema = new Schema({
         type: 'string',
         required: true
     },
+    tipo: {
+        type: 'string',
+        required: true
+    },
+    matricula: {
+        type: 'string',
+        required: true
+    },
     timestamp: {
         type: 'date',
         default: new Date()
